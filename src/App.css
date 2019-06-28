@@ -1,16 +1,33 @@
 #pokemon-container{
   margin-top: 50px;
   height: 500px !important;
-  overflow: scroll;
-  border-right: 2px solid #800000;
-  border-left: 2px solid #800000;
+  overflow-y: scroll;
+  overflow-x: hidden;
   color: white;
 }
 
+#pokemon-container button {
+  width: 120px;
+  height: 120px;
+  padding: 5px !important;
+  border: none;
+  color: black;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  font-weight: bold;
+  
+}
+
+#pokemon-container img {
+  margin: 0px;
+}
 body {
   background: linear-gradient(
-        rgba(37, 36, 36, 0.45),
-        #e74c3c
+    #3a3233,
+        white 40%
       );
    background-attachment: fixed;
     background-position: center center;
@@ -35,4 +52,23 @@ animation: rot 6s linear infinite;
 
 .card-body {
   
+}
+
+
+#pokemon-container::-webkit-scrollbar {
+  width: 9px;
+}
+
+#pokemon-container::-webkit-scrollbar-track {
+  border-radius: 30px;
+  background: linear-gradient(
+    white,
+         red 60%
+      );
+}
+
+#pokemon-container::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+background-color: black;
+outline: 1px solid slategrey;
 }

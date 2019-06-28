@@ -14,7 +14,7 @@ export default class PokemonList extends Component {
     handleEvent(e) {
         const inputValue = e.target.value
         const tempList = [...this.state.pokemonList]
-        const filteredList = tempList.filter(list => !list.name.indexOf(inputValue))
+        const filteredList = tempList.filter(list => !list.name.indexOf(inputValue.toLowerCase()))
         this.setState({
             filteredList
         })

@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
 
-const style = {
-    'width': '14rem',
-    'margin': '10px'
-}
-
 export default class PokemonList extends Component {
     constructor(props) {
         super(props)
@@ -13,14 +8,12 @@ export default class PokemonList extends Component {
             filteredList: null,
             isReady: false
         }
-        // this.url = 'https://github.com/PokeAPI/pokeapi/blob/master/data/v2/sprites/pokemon/'
         this.handleEvent = this.handleEvent.bind(this)
     }
 
     handleEvent(e) {
         const inputValue = e.target.value
         const tempList = [...this.state.pokemonList]
-        debugger
         const filteredList = tempList.filter(list => !list.name.indexOf(inputValue))
         this.setState({
             filteredList
@@ -53,11 +46,15 @@ export default class PokemonList extends Component {
                 <React.Fragment>
                     <div className="container-fluid">
                         <div className="row ">
-                            <div className="col-4 mx-auto pokemon">
+                            <div className="mx-auto pokemon">
                                 <div className="form-group pokemon__input">
-                                <label for="pokemon-name">Pokemon Name</label>
-                                    <input onChange={this.handleEvent} type="text" className="form-control" id="pokemon-name"
-                                    placeholder="Pokemon name" />
+                                    <div className='text-center mt-4'>
+                                        <img src='/ball.png' height='80' className='mb-4 ball-anim' alt='poke-ball'/>
+                                        <img src='/poke.png' height='80' className='mb-4' alt='poke api logo'/>
+                                    </div>
+                                    <input onChange={this.handleEvent} type="text" className="form-control mt-4" id="pokemon-name"
+                                    placeholder="Search Pokemon" />
+                                    
                             </div>
                             </div>
                         </div>
@@ -65,12 +62,9 @@ export default class PokemonList extends Component {
                     <div className="container" id="pokemon-container">
                         <div className="row d-flex justify-content-center" >
                             {pokemonList.map((pokemon, index) => (
-                                <div className="card" style={style} key={index}>
-                                    {/* <img src={`${this.url}${index + 1}.png?raw=true`} className="card-img-top" alt={`${pokemon.name}`} /> */}
-                                    <div className="card-body text-center">
-                                        <span>{pokemon.name}</span>
+                                <div className="card-body text-center" key={index}>
+                                        <span className='badge badge-primary'>{pokemon.name}</span>
                                     </div>
-                                </div>
                             ))}
                         </div>
                     </div>

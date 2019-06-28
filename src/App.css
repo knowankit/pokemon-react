@@ -1,6 +1,38 @@
 #pokemon-container{
-  margin-top: 20px;
+  margin-top: 50px;
   height: 500px !important;
   overflow: scroll;
-  border: 2px solid black;
+  border-right: 2px solid #800000;
+  border-left: 2px solid #800000;
+  color: white;
+}
+
+body {
+  background: linear-gradient(
+        rgba(37, 36, 36, 0.45),
+        #e74c3c
+      );
+   background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+span {
+  cursor: pointer;
+}
+
+.ball-anim {
+animation: rot 6s linear infinite;
+}
+
+@keyframes rot {
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.card-body {
+  
 }

@@ -62,9 +62,7 @@ export default class PokemonList extends Component {
                     <div className="container" id="pokemon-container">
                         <div className="row d-flex justify-content-center" >
                             {pokemonList.map((pokemon, index) => (
-                                <div className="card-body text-center" key={index}>
-                                        <span className='badge badge-primary'>{pokemon.name}</span>
-                                    </div>
+                                        <button className='btn'> <img src='/ball.png' height='40' alt='poke-ball'/> {pokemon.name}</button>
                             ))}
                         </div>
                     </div>
